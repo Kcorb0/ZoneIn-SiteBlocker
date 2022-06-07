@@ -1,0 +1,29 @@
+{
+    "name": "ZoneIn",
+    "version": "0.1.1",
+    "description": "A site blocking extension to zone in on what is important",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "ZoneIn",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/ayaya16.png",
+            "32": "/images/ayaya32.png",
+            "48": "/images/ayaya48.png",
+            "128": "/images/ayaya128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/ayaya16.png",
+        "32": "/images/ayaya32.png",
+        "48": "/images/ayaya48.png",
+        "128": "/images/ayaya128.png"
+    }
+}
