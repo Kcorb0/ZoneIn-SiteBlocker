@@ -1,6 +1,7 @@
-let active = false;
-
 chrome.runtime.onInstalled.addListener(() => {
+
+    let active = false;
+
     chrome.storage.sync.set({ active });
     console.log(`Extension status: ${active}`);
 });
@@ -19,6 +20,8 @@ chrome.tabs.onUpdated.addListener(() => {
             "just-eat.co.uk",
             "dominos.co.uk"
         ];
+
+        console.log(`Status ${status}`)
 
         if (status === true) {
             chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {

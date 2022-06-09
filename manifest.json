@@ -14,16 +14,16 @@
         "default_title": "ZoneIn",
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "/images/ayaya16.png",
-            "32": "/images/ayaya32.png",
-            "48": "/images/ayaya48.png",
-            "128": "/images/ayaya128.png"
+            "16": "images/eye_ripple.png",
+            "32": "images/eye_ripple.png",
+            "48": "images/eye_ripple.png",
+            "128": "images/eye_ripple.png"
         }
     },
     "icons": {
-        "16": "/images/ayaya16.png",
-        "32": "/images/ayaya32.png",
-        "48": "/images/ayaya48.png",
-        "128": "/images/ayaya128.png"
+        "16": "images/eye_ripple.png",
+        "32": "images/eye_ripple.png",
+        "48": "images/eye_ripple.png",
+        "128": "images/eye_ripple.png"
     }
 }
