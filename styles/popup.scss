@@ -113,7 +113,7 @@ body {
 .site-inp {
     grid-row: 1;
     width: 160px;
-    border: 1px solid $cPink;
+    border: 2px solid $cPink;
     box-sizing: border-box;
     outline: none;
     padding-left: 5px;
@@ -124,7 +124,7 @@ body {
 }
 
 .site-inp:focus {
-    border: 1px solid $cHPink;
+    border: 2px solid $cHPink;
 }
 
 .add-site {
@@ -139,7 +139,13 @@ body {
 
 .sites-cont {
     grid-row: 4;
-    border: 2px solid $cBlue;
+    border: 2px solid $cPink;
     margin: 0px 10px 0px 10px;
-    height: 300px;
+    height: 250px;
+    padding: 10px;
+}
+
+.sites-cont p {
+    margin-bottom: 10px;
+    font-size: 16px;
 }
