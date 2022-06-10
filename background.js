@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
 
     let active = false;
-    let blockedSites = ["twitter.com", "twitch.tv"]
+    let blockedSites = ["twitter.com", "twitch.tv", "hulu.com", "netflix.com", "just-eat.co.uk"]
 
     chrome.storage.sync.set({ active });
     chrome.storage.sync.set({ blockedSites });

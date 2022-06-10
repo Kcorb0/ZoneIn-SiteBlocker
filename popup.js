@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    createSiteList();
-
-
     document.getElementById('activate').addEventListener('click', () => {
         let active = true;
 
@@ -28,10 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             document.getElementById('site-inp').value = "";
             chrome.storage.sync.set({ "blockedSites": blockedSites.push(newSite) });
+
         });
+
     });
 
-
+    createSiteList();
 });
 
 
