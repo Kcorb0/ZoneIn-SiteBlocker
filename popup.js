@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
     createSiteList();
 });
 
-
 function createSiteList() {
     chrome.storage.sync.get('blockedSites', (data) => {
         let sites = data.blockedSites;
