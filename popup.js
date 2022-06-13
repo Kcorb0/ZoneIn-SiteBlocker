@@ -2,14 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('activate').addEventListener('click', () => {
         let active = true;
-
         chrome.storage.sync.set({ active });
+
+        document.getElementById('activate').classList.add("active");
+        document.getElementById('de-activate').classList.remove("active");
     });
 
     document.getElementById('de-activate').addEventListener('click', () => {
         let active = false;
-
         chrome.storage.sync.set({ active });
+
+        document.getElementById('de-activate').classList.add("active");
+        document.getElementById('activate').classList.remove("active");
     });
 
     document.getElementById('refresh').addEventListener('click', () => {

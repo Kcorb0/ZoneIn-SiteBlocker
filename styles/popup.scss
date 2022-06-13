@@ -8,7 +8,6 @@ $cLBlue: #23B5D3; //Pacific Blue
 $cBlue: #279AF1; //Dodger Blue
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -46,30 +45,30 @@ body {
     gap: 10px;
 }
 
-.btn {
+button {
     border: none;
     height: 30px;
     font-size: 16px;
     text-align: center;
     font-weight: 600;
     transition-duration: 0.4s;
-    background-color: $cWhite;
-    color: $cBlack;
+    background-color: $cPink;
+    color: $cWhite;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: $cHWhite;
+button:active {
+    box-shadow: inset 0 0 5px $cWhite;
+    transition-duration: 0.01s;
+}
+
+button:hover {
+    background-color: $cHPink;
 }
 
 .refresh {
     grid-row: 1;
     grid-column: 1;
-}
-
-.refresh:active {
-    box-shadow: inset 0 0 5px $cWhite;
-    transition-duration: 0.01s;
 }
 
 .switch {
@@ -93,13 +92,12 @@ body {
 }
 
 .active {
-    background-color: $cPink;
-    color: $cWhite;
+    background-color: $cWhite;
+    color: $cBlack;
 }
 
 .active:hover {
-    background-color: $cHPink;
-    color: $cWhite;
+    background-color: $cHWhite;
 }
 
 .sites {
@@ -133,10 +131,6 @@ body {
     height: 100%;
 }
 
-.add-site:active {
-    box-shadow: inset 0 0 5px $cWhite;
-    transition-duration: 0.01s;
-}
 
 .sites-cont {
     grid-row: 4;
@@ -173,11 +167,6 @@ body {
     padding: 0 4% 4% 4%;
     width: 80%;
     height: 30px;
-}
-
-.fbtn:active {
-    box-shadow: inset 0 0 5px $cWhite;
-    transition-duration: 0.01s;
 }
 
 .donate {
