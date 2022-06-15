@@ -8,7 +8,7 @@ body {
   width: 280px;
   background-color: #F7F7FF;
   border: 2px dashed #279AF1;
-  font-family: 'Roboto';
+  font-family: 'Varela Round', sans-serif;
 }
 
 .content {
@@ -21,13 +21,14 @@ body {
   grid-row: 1;
   width: 100%;
   height: 50px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .name {
   text-align: center;
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 900;
+  font-style: italic;
 }
 
 .toggle-btns {
@@ -45,6 +46,7 @@ button {
   font-size: 16px;
   text-align: center;
   font-weight: 600;
+  font-family: 'Varela Round', sans-serif;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
   background-color: #EA526F;

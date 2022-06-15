@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.update(undefined, { url: tabs[0].url });
         });
+
+
+
+
+        //createSiteList();
+
+
+
+
     });
 
     document.getElementById('add-site').addEventListener('click', () => {
@@ -34,10 +43,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    createSiteList();
+    document.getElementById('donate').addEventListener('click', () => {
+        window.open('https://opencollective.com/', '_blank')
+    });
+
+    document.getElementById('suggestions').addEventListener('click', () => {
+        window.open('https://github.com/Kcorb0/', '_blank')
+    });
+
 });
 
-function createSiteList() {
+async function createSiteList() {
     chrome.storage.sync.get('blockedSites', (data) => {
         let sites = data.blockedSites;
 
