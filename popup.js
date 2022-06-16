@@ -3,32 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('activate').addEventListener('click', () => {
         let active = true;
         chrome.storage.sync.set({ active });
-
-        document.getElementById('activate').classList.add("active");
-        document.getElementById('de-activate').classList.remove("active");
+        document.getElementById('de-activate').classList.add("active");
+        document.getElementById('activate').classList.remove("active");
     });
 
     document.getElementById('de-activate').addEventListener('click', () => {
         let active = false;
         chrome.storage.sync.set({ active });
 
-        document.getElementById('de-activate').classList.add("active");
-        document.getElementById('activate').classList.remove("active");
+        document.getElementById('activate').classList.add("active");
+        document.getElementById('de-activate').classList.remove("active");
     });
 
     document.getElementById('refresh').addEventListener('click', () => {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.update(undefined, { url: tabs[0].url });
-        });
-
-
-
-
-        //createSiteList();
-
-
-
-
+        refresh()
     });
 
     document.getElementById('add-site').addEventListener('click', () => {
@@ -37,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
             let blockedSites = sitesData.blockedSites;
 
             document.getElementById('site-inp').value = "";
-            chrome.storage.sync.set({ "blockedSites": blockedSites.push(newSite) });
+
+            blockedSites.push(newSite.toLowerCase());
+            chrome.storage.sync.set({ "blockedSites": blockedSites });
 
         });
 
@@ -50,6 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('suggestions').addEventListener('click', () => {
         window.open('https://github.com/Kcorb0/', '_blank')
     });
+
+
+    createSiteList();
+
 
 });
 
@@ -68,5 +62,11 @@ async function createSiteList() {
             element.appendChild(para);
 
         });
+    });
+}
+
+function refresh() {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.update(undefined, { url: tabs[0].url });
     });
 }

@@ -6,8 +6,9 @@
 body {
   height: 500px;
   width: 280px;
-  background-color: #F7F7FF;
-  border: 2px dashed #279AF1;
+  border: 2px solid #F7F7FF;
+  background-color: #1f2c36;
+  color: #F7F7FF;
   font-family: 'Varela Round', sans-serif;
 }
 
@@ -29,6 +30,7 @@ body {
   font-size: 38px;
   font-weight: 900;
   font-style: italic;
+  color: #F7F7FF;
 }
 
 .toggle-btns {
@@ -55,14 +57,14 @@ button {
 }
 
 button:active {
-  -webkit-box-shadow: inset 0 0 5px #F7F7FF;
-          box-shadow: inset 0 0 5px #F7F7FF;
+  -webkit-box-shadow: inset 0 0 3px #1f2c36;
+          box-shadow: inset 0 0 3px #1f2c36;
   -webkit-transition-duration: 0.01s;
           transition-duration: 0.01s;
 }
 
 button:hover {
-  background-color: #c42f4a;
+  background-color: #d43d59;
 }
 
 .refresh {
@@ -79,6 +81,11 @@ button:hover {
   grid-column: 2;
   display: -ms-grid;
   display: grid;
+}
+
+.switch button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .switch-on {
@@ -100,12 +107,12 @@ button:hover {
 }
 
 .active {
-  background-color: #F7F7FF;
-  color: #070600;
+  background-color: #1f2c36;
+  color: #F7F7FF;
 }
 
 .active:hover {
-  background-color: #ffe4e9;
+  background-color: #3b4a55;
 }
 
 .sites {
@@ -129,14 +136,33 @@ button:hover {
           box-sizing: border-box;
   outline: none;
   padding-left: 5px;
+  background-color: #1f2c36;
+  color: #F7F7FF;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.site-inp::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.site-inp:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.site-inp::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.site-inp::placeholder {
+  color: rgba(255, 255, 255, 0.452);
 }
 
 .site-inp[type="text"] {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .site-inp:focus {
-  border: 2px solid #c42f4a;
+  border: 2px solid #d43d59;
 }
 
 .add-site {
@@ -148,10 +174,12 @@ button:hover {
 .sites-cont {
   -ms-grid-row: 4;
   grid-row: 4;
-  border: 2px solid #EA526F;
   margin: 0px 10px 0px 10px;
-  height: 250px;
-  padding: 10px;
+  padding: 0 10px 0 10px;
+  height: 280px;
+  border: 2px solid #EA526F;
+  border-top: 0px;
+  border-bottom: 0px;
 }
 
 .sites-cont p {
@@ -159,11 +187,18 @@ button:hover {
   font-size: 16px;
 }
 
+.sites-header {
+  font-weight: 300;
+  text-align: center;
+  color: #F7F7FF;
+}
+
 .del-hint {
   font-size: 14px;
   font-weight: 300;
   text-align: center;
   padding-top: 5px;
+  color: #F7F7FF;
 }
 
 .del-site {

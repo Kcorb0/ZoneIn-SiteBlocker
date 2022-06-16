@@ -1,7 +1,8 @@
 // Colours
 $cPink: #EA526F; //Paradise Pink
-$cHPink: #c42f4a;
-$cBlack: #070600; //Smoky Black
+$cHPink: #d43d59;
+$cBlack: #1f2c36; //Smoky Black
+$cHBlack: #3b4a55;
 $cWhite: #F7F7FF; //Ghost White
 $cHWhite: #ffe4e9;
 $cLBlue: #23B5D3; //Pacific Blue
@@ -16,8 +17,9 @@ $cBlue: #279AF1; //Dodger Blue
 body {
     height: 500px;
     width: 280px;
-    background-color: $cWhite;
-    border: 2px dashed $cBlue;
+    border: 2px solid $cWhite;
+    background-color: $cBlack;
+    color: $cWhite;
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -37,6 +39,7 @@ body {
     font-size: 38px;
     font-weight: 900;
     font-style: italic;
+    color: $cWhite;
 }
 
 .toggle-btns {
@@ -61,7 +64,7 @@ button {
 }
 
 button:active {
-    box-shadow: inset 0 0 5px $cWhite;
+    box-shadow: inset 0 0 3px $cBlack;
     transition-duration: 0.01s;
 }
 
@@ -80,6 +83,10 @@ button:hover {
     display: grid;
 }
 
+.switch button:active {
+    box-shadow: none;
+}
+
 .switch-on {
     grid-row: 1;
     grid-column: 1;
@@ -95,12 +102,12 @@ button:hover {
 }
 
 .active {
-    background-color: $cWhite;
-    color: $cBlack;
+    background-color: $cBlack;
+    color: $cWhite;
 }
 
 .active:hover {
-    background-color: $cHWhite;
+    background-color: $cHBlack;
 }
 
 .sites {
@@ -119,10 +126,17 @@ button:hover {
     box-sizing: border-box;
     outline: none;
     padding-left: 5px;
+    background-color: $cBlack;
+    color: $cWhite;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.site-inp::placeholder {
+    color: rgba(255, 255, 255, 0.452);
 }
 
 .site-inp[type="text"] {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .site-inp:focus {
@@ -137,10 +151,12 @@ button:hover {
 
 .sites-cont {
     grid-row: 4;
-    border: 2px solid $cPink;
     margin: 0px 10px 0px 10px;
-    height: 250px;
-    padding: 10px;
+    padding: 0 10px 0 10px;
+    height: 280px;
+    border: 2px solid $cPink;
+    border-top: 0px;
+    border-bottom: 0px;
 }
 
 .sites-cont p {
@@ -148,11 +164,18 @@ button:hover {
     font-size: 16px;
 }
 
+.sites-header {
+    font-weight: 300;
+    text-align: center;
+    color: $cWhite;
+}
+
 .del-hint {
     font-size: 14px;
     font-weight: 300;
     text-align: center;
     padding-top: 5px;
+    color: $cWhite;
 }
 
 .del-site {
