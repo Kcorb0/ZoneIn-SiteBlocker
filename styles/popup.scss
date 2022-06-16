@@ -39,6 +39,7 @@ body {
     font-size: 38px;
     font-weight: 900;
     font-style: italic;
+    font-family: 'Russo One', sans-serif;
     color: $cWhite;
 }
 
@@ -162,6 +163,17 @@ button:hover {
 .sites-cont p {
     margin-bottom: 10px;
     font-size: 16px;
+}
+
+.sites-cont button {
+    font-size: 16px;
+    font-weight: 900;
+    color: $cPink;
+    background: none;
+    float: right;
+    padding-right: 10px;
+    padding-top: 1px;
+    height: max-content;
 }
 
 .sites-header {
