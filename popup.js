@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Button actions
     document.getElementById('activate').addEventListener('click', () => {
         let active = true;
-        chrome.storage.sync.set({ active });
+        chrome.storage.local.set({ active });
         document.getElementById('de-activate').classList.add("active");
         document.getElementById('activate').classList.remove("active");
     });
 
     document.getElementById('de-activate').addEventListener('click', () => {
         let active = false;
-        chrome.storage.sync.set({ active });
+        chrome.storage.local.set({ active });
         document.getElementById('activate').classList.add("active");
         document.getElementById('de-activate').classList.remove("active");
     });
@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('add-site').addEventListener('click', () => {
-        chrome.storage.sync.get("blockedSites", (sitesData) => {
+        chrome.storage.local.get("blockedSites", (sitesData) => {
             let newSite = document.getElementById('site-inp').value;
             let blockedSites = sitesData.blockedSites;
 
             document.getElementById('site-inp').value = "";
             blockedSites.push(newSite.toLowerCase());
-            chrome.storage.sync.set({ "blockedSites": blockedSites });
+            chrome.storage.local.set({ "blockedSites": blockedSites });
         });
     });
 
@@ -48,26 +48,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-async function createSiteList() {
-    chrome.storage.sync.get('blockedSites', (data) => {
+function createSiteList() {
+    chrome.storage.local.get('blockedSites', (data) => {
         let sites = data.blockedSites;
 
         sites.forEach((site, idx) => {
-            let para = document.createElement("p");
+
+            // <div><P>1. examplesite.com<p/><button>X<button/><div/>
+
+            let siteDiv = document.createElement("div");
+            let sitePara = document.createElement("p");
             let textNode = document.createTextNode(`${(idx + 1)}. ${site}`);
             let delButton = document.createElement("button");
 
+            sitePara.appendChild(textNode);
             delButton.innerHTML = "X";
-            delButton.setAttribute("id", `site-btn${idx + 1}`)
 
-            para.appendChild(textNode);
-            para.appendChild(delButton);
-            para.setAttribute("id", `site${idx + 1}`)
+            sitePara.classList.add("site-name-txt");
+            delButton.classList.add("del-site-btn")
 
-            element = document.getElementById('sites-cont');
-            element.appendChild(para);
+            siteDiv.append(sitePara);
+            siteDiv.append(delButton);
 
-
+            container = document.getElementById('sites-cont');
+            container.appendChild(siteDiv);
         });
     });
 }
@@ -84,7 +88,7 @@ function directToSite(siteUrl) {
 }
 
 function activeButtonState() {
-    chrome.storage.sync.get("active", (status) => {
+    chrome.storage.local.get("active", (status) => {
 
         if (status.active == true) {
             document.getElementById('de-activate').classList.add("active");
@@ -97,9 +101,9 @@ function activeButtonState() {
 }
 
 function removeSite(listNum) {
-    chrome.storage.sync.get("blockedSites", (sitesData) => {
+    chrome.storage.local.get("blockedSites", (sitesData) => {
         let blockedSites = sitesData.blockedSites;
         blockedSites.splice(Number(listNum) + 1, 1);
-        chrome.storage.sync.set({ "blockedSites": blockedSites });
+        chrome.storage.local.set({ "blockedSites": blockedSites });
     });
 }

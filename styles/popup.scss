@@ -160,19 +160,30 @@ button:hover {
     border-bottom: 0px;
 }
 
-.sites-cont p {
-    margin-bottom: 10px;
+.site-text {
+    overflow: scroll;
+}
+
+.sites-cont div {
+    display: grid;
+    height: 30px;
+}
+
+.site-name-txt {
+    grid-row: 1;
+    grid-column: 1;
+    overflow: auto;
     font-size: 16px;
 }
 
-.sites-cont button {
+.del-site-btn {
+    grid-row: 1;
+    grid-column: 2;
     font-size: 16px;
     font-weight: 900;
     color: $cPink;
     background: none;
-    float: right;
     padding-right: 10px;
-    padding-top: 1px;
     height: max-content;
 }
 

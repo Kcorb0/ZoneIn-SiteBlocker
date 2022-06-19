@@ -183,19 +183,35 @@ button:hover {
   border-bottom: 0px;
 }
 
-.sites-cont p {
-  margin-bottom: 10px;
+.site-text {
+  overflow: scroll;
+}
+
+.sites-cont div {
+  display: -ms-grid;
+  display: grid;
+  height: 30px;
+}
+
+.site-name-txt {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  overflow: auto;
   font-size: 16px;
 }
 
-.sites-cont button {
+.del-site-btn {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
   font-size: 16px;
   font-weight: 900;
   color: #EA526F;
   background: none;
-  float: right;
   padding-right: 10px;
-  padding-top: 1px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;

@@ -3,14 +3,14 @@ chrome.runtime.onInstalled.addListener(() => {
     let active = false;
     let blockedSites = ["twitter.com"]
 
-    chrome.storage.sync.set({ active });
-    chrome.storage.sync.set({ blockedSites });
+    chrome.storage.local.set({ active });
+    chrome.storage.local.set({ blockedSites });
 
     console.log(`Extension status: ${active}`);
 });
 
 chrome.tabs.onUpdated.addListener(() => {
-    chrome.storage.sync.get("active", (data) => {
+    chrome.storage.local.get("active", (data) => {
 
         let status = data.active;
         let redirectUrl = 'https://www.google.co.uk';
@@ -21,7 +21,7 @@ chrome.tabs.onUpdated.addListener(() => {
             chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
                 let currentUrl = tabs[0].url;
 
-                chrome.storage.sync.get("blockedSites", (sitesData) => {
+                chrome.storage.local.get("blockedSites", (sitesData) => {
 
                     let sites = sitesData.blockedSites
 
