@@ -181,10 +181,11 @@ button:hover {
   border: 2px solid #EA526F;
   border-top: 0px;
   border-bottom: 0px;
+  overflow-y: scroll;
 }
 
-.site-text {
-  overflow: scroll;
+.sites-cont::-webkit-scrollbar {
+  display: none;
 }
 
 .sites-cont div {
@@ -199,9 +200,14 @@ button:hover {
   grid-row: 1;
   -ms-grid-column: 1;
   grid-column: 1;
-  overflow: hidden;
   font-size: 16px;
   width: 200px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.site-name-txt::-webkit-scrollbar {
+  display: none;
 }
 
 .del-site-btn {
@@ -213,7 +219,6 @@ button:hover {
   font-weight: 900;
   color: #EA526F;
   background: none;
-  padding-right: 10px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
