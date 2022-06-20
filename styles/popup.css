@@ -190,7 +190,8 @@ button:hover {
 .sites-cont div {
   display: -ms-grid;
   display: grid;
-  height: 30px;
+  height: 20px;
+  margin-bottom: 10px;
 }
 
 .site-name-txt {
@@ -198,8 +199,9 @@ button:hover {
   grid-row: 1;
   -ms-grid-column: 1;
   grid-column: 1;
-  overflow: auto;
+  overflow: hidden;
   font-size: 16px;
+  width: 200px;
 }
 
 .del-site-btn {
@@ -215,6 +217,10 @@ button:hover {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+
+.del-site-btn:hover {
+  background: none;
 }
 
 .sites-header {
