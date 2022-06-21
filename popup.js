@@ -65,13 +65,28 @@ function createSiteList() {
             delButton.innerHTML = "X";
 
             sitePara.classList.add("site-name-txt");
-            delButton.classList.add("del-site-btn")
+            delButton.classList.add("del-site-btn");
+
+            delButton.setAttribute("id", `del-btn-${idx}`);
 
             siteDiv.append(sitePara);
             siteDiv.append(delButton);
 
             container = document.getElementById('sites-cont');
             container.appendChild(siteDiv);
+
+            document.getElementById(`del-btn-${idx}`).addEventListener('click', (idx) => {
+                chrome.storage.local.get("blockedSites", (sitesData) => {
+                    let blockedSites = sitesData.blockedSites;
+
+                    // Figure out how to get idx to delete at index
+                    blockedSites.splice(idx, 1);
+                    alert(idx)
+                    chrome.storage.local.set({ "blockedSites": blockedSites });
+                });
+            });
+
+
         });
     });
 }
@@ -103,7 +118,11 @@ function activeButtonState() {
 function removeSite(listNum) {
     chrome.storage.local.get("blockedSites", (sitesData) => {
         let blockedSites = sitesData.blockedSites;
-        blockedSites.splice(Number(listNum) + 1, 1);
+        blockedSites.splice(listNum, 1);
         chrome.storage.local.set({ "blockedSites": blockedSites });
     });
+}
+
+function alertTest() {
+    alert('button was clicked');
 }

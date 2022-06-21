@@ -188,6 +188,14 @@ button:hover {
   display: none;
 }
 
+.sites-header {
+  font-weight: 300;
+  text-align: center;
+  color: #F7F7FF;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
 .sites-cont div {
   display: -ms-grid;
   display: grid;
@@ -226,12 +234,6 @@ button:hover {
 
 .del-site-btn:hover {
   background: none;
-}
-
-.sites-header {
-  font-weight: 300;
-  text-align: center;
-  color: #F7F7FF;
 }
 
 .del-hint {
