@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('site-inp').value = "";
             blockedSites.push(newSite.toLowerCase());
             chrome.storage.local.set({ "blockedSites": blockedSites });
+
         });
+
     });
 
     // Donate Button, navigates to open collective
@@ -48,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function createSiteList() {
+async function createSiteList() {
     chrome.storage.local.get('blockedSites', (data) => {
         let sites = data.blockedSites;
 
-        sites.forEach((site, idx) => {
+        sites.forEach(async (site, idx) => {
 
             // <div><P>1. examplesite.com<p/><button>X<button/><div/>
 
@@ -66,8 +68,7 @@ function createSiteList() {
 
             sitePara.classList.add("site-name-txt");
             delButton.classList.add("del-site-btn");
-
-            delButton.setAttribute("id", `del-btn-${idx}`);
+            //delButton.setAttribute("id", `del-btn-${idx}`);
 
             siteDiv.append(sitePara);
             siteDiv.append(delButton);
@@ -75,22 +76,17 @@ function createSiteList() {
             container = document.getElementById('sites-cont');
             container.appendChild(siteDiv);
 
-            document.getElementById(`del-btn-${idx}`).addEventListener('click', (idx) => {
+            await delButton.addEventListener('click', () => {
                 chrome.storage.local.get("blockedSites", (sitesData) => {
                     let blockedSites = sitesData.blockedSites;
-
-                    // Figure out how to get idx to delete at index
                     blockedSites.splice(idx, 1);
                     alert(idx)
                     chrome.storage.local.set({ "blockedSites": blockedSites });
                 });
             });
-
-
         });
     });
 }
-
 
 function refreshPage() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -115,14 +111,10 @@ function activeButtonState() {
     });
 }
 
-function removeSite(listNum) {
+function removeSite(idx) {
     chrome.storage.local.get("blockedSites", (sitesData) => {
         let blockedSites = sitesData.blockedSites;
-        blockedSites.splice(listNum, 1);
+        blockedSites.splice(idx, 1);
         chrome.storage.local.set({ "blockedSites": blockedSites });
     });
-}
-
-function alertTest() {
-    alert('button was clicked');
 }
