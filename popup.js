@@ -21,15 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
         refreshPage()
     });
 
+    // Adds a new site to the sites list element
     document.getElementById('add-site').addEventListener('click', () => {
         chrome.storage.local.get("blockedSites", (sitesData) => {
             let newSite = document.getElementById('site-inp').value;
             let blockedSites = sitesData.blockedSites;
 
-            document.getElementById('site-inp').value = "";
-            blockedSites.push(newSite.toLowerCase());
-            chrome.storage.local.set({ "blockedSites": blockedSites });
-
+            if (newSite !== "") {
+                document.getElementById('site-inp').value = "";
+                blockedSites.push(newSite.toLowerCase());
+                chrome.storage.local.set({ "blockedSites": blockedSites });
+            }
+            refreshSitesList();
+            createSiteList();
         });
 
     });
@@ -60,7 +64,7 @@ async function createSiteList() {
 
             let siteDiv = document.createElement("div");
             let sitePara = document.createElement("p");
-            let textNode = document.createTextNode(`${(idx + 1)}. ${site}`);
+            let textNode = document.createTextNode(`${site}`);
             let delButton = document.createElement("button");
 
             sitePara.appendChild(textNode);
@@ -73,16 +77,16 @@ async function createSiteList() {
             siteDiv.append(sitePara);
             siteDiv.append(delButton);
 
-            container = document.getElementById('sites-cont');
+            container = document.getElementById("site-items");
             container.appendChild(siteDiv);
 
             await delButton.addEventListener('click', () => {
                 chrome.storage.local.get("blockedSites", (sitesData) => {
                     let blockedSites = sitesData.blockedSites;
                     blockedSites.splice(idx, 1);
-                    alert(idx)
                     chrome.storage.local.set({ "blockedSites": blockedSites });
                 });
+                siteDiv.remove();
             });
         });
     });
@@ -117,4 +121,9 @@ function removeSite(idx) {
         blockedSites.splice(idx, 1);
         chrome.storage.local.set({ "blockedSites": blockedSites });
     });
+}
+
+function refreshSitesList() {
+    let sitesList = document.getElementById("site-items");
+    sitesList.innerHTML = "";
 }
