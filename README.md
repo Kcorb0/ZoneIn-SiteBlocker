@@ -15,3 +15,8 @@
 #### Features
 - Add Timer that auto disables the blocker after a set time.
 - Add nuclear option to stop user being able to turn site blocker off while timer is active. (User can still disable the extension.)
+- Create redirect page, potentially customizable but will include some quotes perhaps, or images to deter user.
+- Settings 
+    - Lock toggle ability while timer is active
+    - Change colour format of ext (Light Mode, Dark Mode)
+- Tab for sites that should be blocked even if ext is off, these could be sites such as fast food or gambling sites.

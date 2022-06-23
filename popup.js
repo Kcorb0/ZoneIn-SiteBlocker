@@ -86,7 +86,7 @@ async function createSiteList() {
                     blockedSites.splice(idx, 1);
                     chrome.storage.local.set({ "blockedSites": blockedSites });
                 });
-                siteDiv.remove();
+                siteDiv.remove()
             });
         });
     });
@@ -112,14 +112,6 @@ function activeButtonState() {
             document.getElementById('activate').classList.add("active");
             document.getElementById('de-activate').classList.remove("active");
         }
-    });
-}
-
-function removeSite(idx) {
-    chrome.storage.local.get("blockedSites", (sitesData) => {
-        let blockedSites = sitesData.blockedSites;
-        blockedSites.splice(idx, 1);
-        chrome.storage.local.set({ "blockedSites": blockedSites });
     });
 }
 
