@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
         directToSite('https://github.com/Kcorb0/ZoneIn-SiteBlocker');
     });
 
+    document.getElementById('settings').addEventListener('click', () => {
+        let url = "./settings.html";
+        window.open(url, 'popUpWindow', 'height=100,width=300,right=500,top=500,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+    });
+
     // On popup open
     createSiteList();
     activeButtonState();

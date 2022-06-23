@@ -1,7 +1,7 @@
 {
-    "name": "ZoneIn",
-    "version": "0.1.1",
-    "description": "A site blocking extension to zone in on what is important",
+    "name": "ZoneIn-SiteBlocker",
+    "version": "1.0.1",
+    "description": "Take control of your internet vices, zone in on what's important.",
     "permissions": [
         "storage",
         "tabs"

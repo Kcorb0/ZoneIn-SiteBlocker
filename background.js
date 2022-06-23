@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
 
     let active = false;
-    let blockedSites = ["twitter.com"]
+    let blockedSites = ["facebook.com"]
 
     chrome.storage.local.set({ active });
     chrome.storage.local.set({ blockedSites });
@@ -13,7 +13,7 @@ chrome.tabs.onUpdated.addListener(() => {
     chrome.storage.local.get("active", (data) => {
 
         let status = data.active;
-        let redirectUrl = 'https://www.google.co.uk';
+        let redirectUrl = 'https://kcorb0.github.io/ZoneIn-SiteBlocker/';
 
         console.log(`Status ${status}`)
 
