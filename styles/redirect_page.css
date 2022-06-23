@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1f2c36;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Varela Round', sans-serif;
+  color: #F7F7FF;
+}
+
+.content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.main {
+  border-left: 2px solid #F7F7FF;
+  border-right: 2px solid #F7F7FF;
+}
+
+.header {
+  font-size: 38px;
+  font-weight: 900;
+  font-style: italic;
+  font-family: 'Russo One', sans-serif;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=redirect_page.css.map */

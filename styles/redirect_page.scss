@@ -1,0 +1,44 @@
+$cPink: #EA526F; //Paradise Pink
+$cHPink: #d43d59;
+$cBlack: #1f2c36; //Smoky Black
+$cHBlack: #3b4a55;
+$cWhite: #F7F7FF; //Ghost White
+$cHWhite: #ffe4e9;
+$cLBlue: #23B5D3; //Pacific Blue
+$cBlue: #279AF1; //Dodger Blue
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $cBlack;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    color: $cWhite;
+}
+
+.content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.main {
+    border-left: 2px solid $cWhite;
+    border-right: 2px solid $cWhite;
+}
+
+.header {
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+    font-family: 'Russo One', sans-serif;
+    padding-bottom: 20px;
+}
