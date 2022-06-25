@@ -21,3 +21,4 @@
     - Change colour format of ext (Light Mode, Dark Mode)
 - Tab for sites that should be blocked even if ext is off, these could be sites such as fast food or gambling sites.
 - Create a tab view for the sites lists, when off and on
+- Add tabs for perma blocked sites and toggle blocked sites
