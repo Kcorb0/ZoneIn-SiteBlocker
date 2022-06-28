@@ -1,12 +1,27 @@
 chrome.runtime.onInstalled.addListener(() => {
 
     let active = false;
-    let blockedSites = ["facebook.com"]
+    let blockedSites = ["facebook.com"];
+    let hardBlockedSites = ["just-eat.co.uk"]
 
     chrome.storage.local.set({ active });
     chrome.storage.local.set({ blockedSites });
+    chrome.storage.local.set({ hardBlockedSites })
+
+    console.log(`                                                   
+                                                        
+    _/_/_/_/_/    _/_/    _/      _/  _/_/_/_/  _/  _/      _/   
+         _/    _/    _/  _/_/    _/  _/            _/_/    _/    
+      _/      _/    _/  _/  _/  _/  _/_/_/    _/  _/  _/  _/     
+   _/        _/    _/  _/    _/_/  _/        _/  _/    _/_/      
+_/_/_/_/_/    _/_/    _/      _/  _/_/_/_/  _/  _/      _/                                            
+
+                    Welcome to ZoneIn!
+`);
 
     console.log(`Extension status: ${active}`);
+    console.log(`Soft Blocked Sites: ${blockedSites}`);
+    console.log(`Hard Blocked Sites: ${hardBlockedSites}`);
 });
 
 chrome.tabs.onUpdated.addListener(() => {
