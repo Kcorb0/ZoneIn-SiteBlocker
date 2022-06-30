@@ -91,6 +91,7 @@ button:hover {
     grid-column: 1;
     border: 2px solid $cPink;
     border-right: 0;
+    border-top-left-radius: 10px;
 }
 
 .switch-off {
@@ -98,6 +99,7 @@ button:hover {
     grid-column: 2;
     border: 2px solid $cPink;
     border-left: 0;
+    border-bottom-right-radius: 10px;
 }
 
 .active {
@@ -147,19 +149,35 @@ button:hover {
     height: 100%;
 }
 
+.tabs {
+    margin: 0 10px 10px 10px;
+}
+
+.tabs button {
+    background: none;
+    width: 49%;
+}
+
+.tab-btn-active {
+    color: $cPink;
+    border: 2px solid $cPink;
+    border-bottom: 2px solid $cBlack;
+}
+
+.tab-btn-inactive {
+    border: 2px solid $cPink;
+}
+
 .sites-cont {
     grid-row: 4;
     margin: 0 10px 0 10px;
     padding: 0 10px 0 10px;
     height: 280px;
-    border: 2px solid $cPink;
-    border-top: 0px;
-    border-bottom: 0px;
 }
 
 .site-items {
     overflow-y: scroll;
-    height: 250px;
+    height: 200px;
 }
 
 .site-items div {
@@ -177,11 +195,15 @@ button:hover {
     display: none;
 }
 
+.site-items-inactive {
+    display: none;
+}
+
 .sites-header {
     font-weight: 300;
     text-align: center;
     color: $cWhite;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
@@ -236,7 +258,14 @@ button:hover {
     bottom: 0;
     padding: 0 4% 4% 4%;
     width: 80%;
-    height: 30px;
+    height: 25px;
+}
+
+.footer button {
+    font-size: 14px;
+    height: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .donate {

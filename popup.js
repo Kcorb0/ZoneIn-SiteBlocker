@@ -97,6 +97,45 @@ async function createSiteList() {
     });
 }
 
+// Dont use, testing only
+async function hCreateSiteList() {
+    chrome.storage.local.get('hardBlockedSites', (data) => {
+        let sites = data.blockedSites;
+
+        sites.forEach(async (site, idx) => {
+
+            // <div><P>1. examplesite.com<p/><button>X<button/><div/>
+
+            let siteDiv = document.createElement("div");
+            let sitePara = document.createElement("p");
+            let textNode = document.createTextNode(`${site}`);
+            let delButton = document.createElement("button");
+
+            sitePara.appendChild(textNode);
+            delButton.innerHTML = "X";
+
+            sitePara.classList.add("site-name-txt");
+            delButton.classList.add("del-site-btn");
+            //delButton.setAttribute("id", `del-btn-${idx}`);
+
+            siteDiv.append(sitePara);
+            siteDiv.append(delButton);
+
+            container = document.getElementById("site-items-perm");
+            container.appendChild(siteDiv);
+
+            await delButton.addEventListener('click', () => {
+                chrome.storage.local.get('hardBlockedSites', (sitesData) => {
+                    let blockedSites = sitesData.blockedSites;
+                    blockedSites.splice(idx, 1);
+                    chrome.storage.local.set({ 'hardBlockedSites': blockedSites });
+                });
+                siteDiv.remove()
+            });
+        });
+    });
+}
+
 function refreshPage() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.update(undefined, { url: tabs[0].url });
