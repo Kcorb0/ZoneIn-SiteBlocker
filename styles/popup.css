@@ -1,60 +1,40 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Varela Round', sans-serif;
+  color: #F7F7FF;
+  font-weight: 300;
+  font-size: 16px;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
 }
 
 body {
-  height: 500px;
-  width: 280px;
+  height: 460px;
+  width: 240px;
   border: 2px solid #F7F7FF;
   background-color: #1f2c36;
-  color: #F7F7FF;
-  font-family: 'Varela Round', sans-serif;
+  padding: 5px 15px 15px 15px;
 }
 
-.content {
-  display: -ms-grid;
-  display: grid;
-}
-
-.header {
-  -ms-grid-row: 1;
-  grid-row: 1;
+h1 {
   width: 100%;
-  height: 50px;
-  padding-top: 10px;
-}
-
-.name {
+  margin: 10px 0px 10px 0px;
   text-align: center;
   font-size: 38px;
   font-weight: 900;
   font-style: italic;
   font-family: 'Russo One', sans-serif;
-  color: #F7F7FF;
-}
-
-.toggle-btns {
-  -ms-grid-row: 2;
-  grid-row: 2;
-  display: -ms-grid;
-  display: grid;
-  padding: 0px 10px 10px 10px;
-  gap: 10px;
 }
 
 button {
-  border: none;
-  height: 30px;
-  font-size: 16px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 10px;
+  height: 25px;
   text-align: center;
-  font-weight: 600;
-  font-family: 'Varela Round', sans-serif;
   background-color: #EA526F;
   color: #F7F7FF;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
 }
 
 button:active {
@@ -64,6 +44,12 @@ button:active {
 
 button:hover {
   background-color: #d43d59;
+}
+
+.toggle-btns {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
 }
 
 .refresh {
@@ -94,7 +80,8 @@ button:hover {
   grid-column: 1;
   border: 2px solid #EA526F;
   border-right: 0;
-  border-top-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .switch-off {
@@ -104,7 +91,8 @@ button:hover {
   grid-column: 2;
   border: 2px solid #EA526F;
   border-left: 0;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
 }
 
 .active {
@@ -117,29 +105,25 @@ button:hover {
 }
 
 .sites {
-  -ms-grid-row: 3;
-  grid-row: 3;
   display: -ms-grid;
   display: grid;
+  gap: 10px;
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
-  margin: 10px 10px 10px 10px;
+  margin: 15px 0px 15px 0px;
   height: 25px;
-  gap: 10px;
 }
 
 .site-inp {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  width: 160px;
+  width: 180px;
   border: 2px solid #EA526F;
+  border-radius: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
   padding-left: 5px;
   background-color: #1f2c36;
   color: #F7F7FF;
-  font-family: 'Varela Round', sans-serif;
 }
 
 .site-inp::-webkit-input-placeholder {
@@ -158,50 +142,59 @@ button:hover {
   color: rgba(255, 255, 255, 0.452);
 }
 
-.site-inp[type="text"] {
-  font-size: 14px;
+.sites-header {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 
-.site-inp:focus {
-  border: 2px solid #d43d59;
-}
-
-.add-site {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  height: 100%;
+.sites-cont {
+  height: 260px;
 }
 
 .tabs {
-  margin: 0 10px 10px 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
 }
 
 .tabs button {
   background: none;
-  width: 49%;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.tab-left {
+  border-bottom: 2px solid #F7F7FF;
+}
+
+.tab-right {
+  border-bottom: 2px solid #F7F7FF;
 }
 
 .tab-btn-active {
   color: #EA526F;
-  border: 2px solid #EA526F;
+  border: 2px solid #F7F7FF;
   border-bottom: 2px solid #1f2c36;
 }
 
-.tab-btn-inactive {
-  border: 2px solid #EA526F;
-}
-
-.sites-cont {
-  -ms-grid-row: 4;
-  grid-row: 4;
-  margin: 0 10px 0 10px;
-  padding: 0 10px 0 10px;
-  height: 280px;
+.tab-spacer {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  height: 22px;
+  width: auto;
+  border-bottom: 2px solid #F7F7FF;
 }
 
 .site-items {
   overflow-y: scroll;
-  height: 200px;
+  height: 190px;
 }
 
 .site-items div {
@@ -209,7 +202,7 @@ button:hover {
   display: grid;
   height: 20px;
   margin-bottom: 10px;
-  border: 3px solid #EA526F;
+  border: 2px solid #F7F7FF;
   border-radius: 5px;
   border-top: 0;
   border-bottom: 0;
@@ -222,14 +215,6 @@ button:hover {
 
 .site-items-inactive {
   display: none;
-}
-
-.sites-header {
-  font-weight: 300;
-  text-align: center;
-  color: #F7F7FF;
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 .site-name-txt {
@@ -282,41 +267,31 @@ button:hover {
 .footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
   gap: 10px;
+  width: 240px;
+  -ms-flex-line-pack: center;
+      align-content: center;
   position: absolute;
-  bottom: 0;
-  padding: 0 4% 4% 4%;
-  width: 80%;
-  height: 25px;
+  bottom: 10px;
 }
 
-.footer button {
-  font-size: 14px;
-  height: 25px;
-  border-top-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+.footer button:active {
+  border-bottom: 0px;
 }
 
 .donate {
   -ms-grid-column: 1;
   grid-column: 1;
-  width: 100px;
   font-style: italic;
 }
 
 .suggestion {
   -ms-grid-column: 2;
   grid-column: 2;
-  width: 108px;
 }
 
 .settings {
   -ms-grid-column: 3;
   grid-column: 3;
-  height: 30px;
-  width: 30px;
-  font-size: 20px;
 }
 /*# sourceMappingURL=popup.css.map */

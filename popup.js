@@ -35,7 +35,20 @@ document.addEventListener('DOMContentLoaded', function () {
             refreshSitesList();
             createSiteList();
         });
+    });
 
+    document.getElementById('tab-soft-block').addEventListener('click', () => {
+        document.getElementById('tab-soft-block').classList.add("tab-btn-active");
+        document.getElementById('tab-hard-block').classList.remove("tab-btn-active");
+        document.getElementById('site-items-perm').classList.add("site-items-inactive");
+        document.getElementById('site-items').classList.remove("site-items-inactive");
+    });
+
+    document.getElementById('tab-hard-block').addEventListener('click', () => {
+        document.getElementById('tab-hard-block').classList.add("tab-btn-active");
+        document.getElementById('tab-soft-block').classList.remove("tab-btn-active");
+        document.getElementById('site-items').classList.add("site-items-inactive");
+        document.getElementById('site-items-perm').classList.remove("site-items-inactive");
     });
 
     // Donate Button, navigates to open collective
@@ -55,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // On popup open
     createSiteList();
+    hCreateSiteList()
     activeButtonState();
 
 });
@@ -100,7 +114,7 @@ async function createSiteList() {
 // Dont use, testing only
 async function hCreateSiteList() {
     chrome.storage.local.get('hardBlockedSites', (data) => {
-        let sites = data.blockedSites;
+        let sites = data.hardBlockedSites;
 
         sites.forEach(async (site, idx) => {
 
@@ -126,7 +140,7 @@ async function hCreateSiteList() {
 
             await delButton.addEventListener('click', () => {
                 chrome.storage.local.get('hardBlockedSites', (sitesData) => {
-                    let blockedSites = sitesData.blockedSites;
+                    let blockedSites = sitesData.hardBlockedSites;
                     blockedSites.splice(idx, 1);
                     chrome.storage.local.set({ 'hardBlockedSites': blockedSites });
                 });

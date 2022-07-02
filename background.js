@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
     let active = false;
     let blockedSites = ["facebook.com"];
-    let hardBlockedSites = ["just-eat.co.uk"]
+    let hardBlockedSites = ["just-eat.co.uk", "grosvenorcasinos.com"]
 
     chrome.storage.local.set({ active });
     chrome.storage.local.set({ blockedSites });

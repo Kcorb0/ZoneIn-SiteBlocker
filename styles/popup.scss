@@ -12,55 +12,39 @@ $cBlue: #279AF1; //Dodger Blue
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Varela Round', sans-serif;
+    color: $cWhite;
+    font-weight: 300;
+    font-size: 16px;
+    transition-timing-function: linear;
 }
 
 body {
-    height: 500px;
-    width: 280px;
+    height: 460px;
+    width: 240px;
     border: 2px solid $cWhite;
     background-color: $cBlack;
-    color: $cWhite;
-    font-family: 'Varela Round', sans-serif;
+    padding: 5px 15px 15px 15px;
 }
 
-.content {
-    display: grid;
-}
-
-.header {
-    grid-row: 1;
+h1 {
     width: 100%;
-    height: 50px;
-    padding-top: 10px;
-}
-
-.name {
+    margin: 10px 0px 10px 0px;
     text-align: center;
     font-size: 38px;
     font-weight: 900;
     font-style: italic;
     font-family: 'Russo One', sans-serif;
-    color: $cWhite;
-}
-
-.toggle-btns {
-    grid-row: 2;
-    display: grid;
-    padding: 0px 10px 10px 10px;
-    gap: 10px;
 }
 
 button {
-    border: none;
-    height: 30px;
-    font-size: 16px;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 10px;
+    height: 25px;
     text-align: center;
-    font-weight: 600;
-    font-family: 'Varela Round', sans-serif;
     background-color: $cPink;
     color: $cWhite;
-    cursor: pointer;
-    transition-duration: 0.3s;
 }
 
 button:active {
@@ -69,6 +53,11 @@ button:active {
 
 button:hover {
     background-color: $cHPink;
+}
+
+.toggle-btns {
+    display: grid;
+    gap: 10px;
 }
 
 .refresh {
@@ -91,7 +80,8 @@ button:hover {
     grid-column: 1;
     border: 2px solid $cPink;
     border-right: 0;
-    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .switch-off {
@@ -99,7 +89,8 @@ button:hover {
     grid-column: 2;
     border: 2px solid $cPink;
     border-left: 0;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 .active {
@@ -112,79 +103,83 @@ button:hover {
 }
 
 .sites {
-    grid-row: 3;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin: 10px 10px 10px 10px;
-    height: 25px;
     gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    margin: 15px 0px 15px 0px;
+    height: 25px;
 }
 
 .site-inp {
-    grid-row: 1;
-    width: 160px;
+    width: 180px;
     border: 2px solid $cPink;
+    border-radius: 10px;
     box-sizing: border-box;
     outline: none;
     padding-left: 5px;
     background-color: $cBlack;
     color: $cWhite;
-    font-family: 'Varela Round', sans-serif;
 }
 
 .site-inp::placeholder {
     color: rgba(255, 255, 255, 0.452);
 }
 
-.site-inp[type="text"] {
-    font-size: 14px;
+.sites-header {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.site-inp:focus {
-    border: 2px solid $cHPink;
-}
-
-.add-site {
-    grid-row: 1;
-    height: 100%;
+.sites-cont {
+    height: 260px;
 }
 
 .tabs {
-    margin: 0 10px 10px 10px;
+    display: grid;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .tabs button {
     background: none;
-    width: 49%;
+    grid-row: 1;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tab-left {
+    border-bottom: 2px solid $cWhite;
+}
+
+.tab-right {
+    border-bottom: 2px solid $cWhite;
 }
 
 .tab-btn-active {
     color: $cPink;
-    border: 2px solid $cPink;
+    border: 2px solid $cWhite;
     border-bottom: 2px solid $cBlack;
 }
 
-.tab-btn-inactive {
-    border: 2px solid $cPink;
-}
-
-.sites-cont {
-    grid-row: 4;
-    margin: 0 10px 0 10px;
-    padding: 0 10px 0 10px;
-    height: 280px;
+.tab-spacer {
+    grid-row: 1;
+    height: 22px;
+    width: auto;
+    border-bottom: 2px solid $cWhite;
 }
 
 .site-items {
     overflow-y: scroll;
-    height: 200px;
+    height: 190px;
 }
 
 .site-items div {
     display: grid;
     height: 20px;
     margin-bottom: 10px;
-    border: 3px solid $cPink;
+    border: 2px solid $cWhite;
     border-radius: 5px;
     border-top: 0;
     border-bottom: 0;
@@ -197,14 +192,6 @@ button:hover {
 
 .site-items-inactive {
     display: none;
-}
-
-.sites-header {
-    font-weight: 300;
-    text-align: center;
-    color: $cWhite;
-    font-size: 18px;
-    margin-bottom: 10px;
 }
 
 .site-name-txt {
@@ -229,7 +216,6 @@ button:hover {
     color: $cPink;
     background: none;
     height: max-content;
-
 }
 
 .del-site-btn:hover {
@@ -252,36 +238,27 @@ button:hover {
 
 .footer {
     display: grid;
-    grid-template-columns: 1fr 3fr;
     gap: 10px;
+    width: 240px;
+    align-content: center;
     position: absolute;
-    bottom: 0;
-    padding: 0 4% 4% 4%;
-    width: 80%;
-    height: 25px;
+    bottom: 10px;
 }
 
-.footer button {
-    font-size: 14px;
-    height: 25px;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.footer button:active {
+    border-bottom: 0px;
 }
 
 .donate {
     grid-column: 1;
-    width: 100px;
     font-style: italic;
 }
 
 .suggestion {
     grid-column: 2;
-    width: 108px;
+
 }
 
 .settings {
     grid-column: 3;
-    height: 30px;
-    width: 30px;
-    font-size: 20px;
 }
