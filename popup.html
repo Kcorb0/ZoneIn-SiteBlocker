@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/becaa77bf6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,7 +20,7 @@
     <h1>ZONEiN</h1>
 
     <div class="toggle-btns">
-        <button class="refresh" id="refresh">Refresh</button>
+        <button class="refresh" id="refresh">Refresh <i class="fa fa-refresh fa-spin" id="reficon"></i></button>
 
         <div class="switch">
             <button class="switch-on" id="activate">On</button>
@@ -49,12 +51,12 @@
         <div id="site-items-perm" class="site-items site-items-inactive">
             <!--Generate sites list here, see popup.js-->
         </div>
-
     </div>
 
     <p class="del-hint">Press<spam class="del-site"> X </spam> to remove site</p>
 
     <div class="footer">
+        <div class="cat-icon" id="cat-icon"><img src="./images/cat_icon.png"></div>
         <button class="donate" id="donate">Donation</button>
         <button class="suggestion" id="suggestions">GitHub</button>
         <button class="settings" id="settings">Dev</button>
