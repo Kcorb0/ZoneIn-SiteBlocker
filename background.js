@@ -30,7 +30,7 @@ chrome.tabs.onUpdated.addListener(() => {
         let status = data.active;
         let redirectUrl = 'https://kcorb0.github.io/ZoneIn-SiteBlocker/';
 
-        console.log(`Status ${status}`)
+        console.log(`Status ${status}`);
 
         if (status === true) {
             chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
@@ -38,18 +38,37 @@ chrome.tabs.onUpdated.addListener(() => {
 
                 chrome.storage.local.get("blockedSites", (sitesData) => {
 
-                    let sites = sitesData.blockedSites
+                    let sites = sitesData.blockedSites;
 
-                    console.log(sites)
+                    console.log(sites);
 
                     sites.forEach((site) => {
                         if (currentUrl.includes(site)) {
-                            console.log(site)
+                            console.log(site);
                             chrome.tabs.update(undefined, { url: redirectUrl });
                         }
                     });
                 });
             });
         }
+
+    chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+        let currentUrl = tabs[0].url;
+
+        chrome.storage.local.get("hardBlockedSites", (sitesData) => {
+
+            let sites = sitesData.hardBlockedSites;
+
+            console.log(sites);
+
+            sites.forEach((site) => {
+                if (currentUrl.includes(site)) {
+                    console.log(site);
+                    chrome.tabs.update(undefined, { url: redirectUrl });
+                }
+            });
+        });
+    });
+
     });
 });
