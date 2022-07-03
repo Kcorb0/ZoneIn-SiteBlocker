@@ -26,3 +26,5 @@ Dispite there being many of this type of extension already, I created this becau
 - Tab for sites that should be blocked even if ext is off, these could be sites such as fast food or gambling sites.
 - Create a tab view for the sites lists, when off and on
 - Add tabs for perma blocked sites and toggle blocked sites
+
+<img src="https://github.com/Kcorb0/ZoneIn-SiteBlocker/blob/b93c7bd363f7b747c752a605afe9188f21b5dddc/images/cat_icon.png" width="100" height="100" />
