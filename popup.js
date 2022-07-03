@@ -23,15 +23,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adds a new site to the sites list element
     document.getElementById('add-site').addEventListener('click', () => {
-        chrome.storage.local.get("blockedSites", (sitesData) => {
+        chrome.storage.local.get(["blockedSites", "hardBlockedSites"], (sitesData) => {
             let newSite = document.getElementById('site-inp').value;
             let blockedSites = sitesData.blockedSites;
+            let hardBlockedSites = sitesData.hardBlockedSites;
 
-            if (newSite !== "") {
+
+            if (newSite.slice(0, 2) === "p/") {
+                alert("triggered");
+                document.getElementById('site-inp').value = "";
+                hardBlockedSites.push(newSite.slice(2).toLowerCase());
+                chrome.storage.local.set({ "hardBlockedSites": hardBlockedSites })
+
+            } else if (newSite !== "") {
                 document.getElementById('site-inp').value = "";
                 blockedSites.push(newSite.toLowerCase());
                 chrome.storage.local.set({ "blockedSites": blockedSites });
-            }
+            } 
             refreshSitesList();
             createSiteList();
         });

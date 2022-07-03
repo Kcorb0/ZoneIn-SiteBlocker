@@ -7,15 +7,18 @@
 <br/>
 <p>Zone In, is a simple site blocker to assist in removing temptation from your workspace. Also offering a <strong>Nuclear</strong> option to remove the ability to deactive while a timer is set without deactivating the extension.<p/>
 
-## ToDo
+## Using the Extension
 
-#### Bugs
-- Fix bug with site list where deleting sites then adding to the list again re appends some the deleted sites.
+1. Download extension from [Chrome Store](https://chrome.google.com/webstore/detail/zonein-site-blocker/idkgdfckmdenbikoeblknljoncogimkh).
+1. Enable the extension in your [Chrome extensions](chrome://extensions/).
+1. There are two site lists a soft block and hard block list. Hard blocked means the sites will be blocked even when the extension is toggled off.
+1. Sites can be added to the soft blocked list by entering a url in the input field. To add a site to the hard blocked list, type 'p/' before the url EG: p/youtube.com
+1. Sites can be removed anytime by clicked the X adjacent to the site url.
+
+## ToDo
+- Add support for other browsers (Currently only made for chrome)
 
 #### Features
-- Add Timer that auto disables the blocker after a set time.
-- Add nuclear option to stop user being able to turn site blocker off while timer is active. (User can still disable the extension.)
-- Create redirect page, potentially customizable but will include some quotes perhaps, or images to deter user.
 - Settings 
     - Lock toggle ability while timer is active
     - Change colour format of ext (Light Mode, Dark Mode)
