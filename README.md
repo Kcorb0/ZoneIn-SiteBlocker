@@ -15,13 +15,14 @@
 1. Sites can be added to the soft blocked list by entering a url in the input field. To add a site to the hard blocked list, type 'p/' before the url EG: p/youtube.com
 1. Sites can be removed anytime by clicked the X adjacent to the site url.
 
+## Why Did I Make This Extension
+
+Dispite there being many of this type of extension already, I created this because I found many other's had pay walls behind the site limits and limited features to 'hard blocked sites' as it was easy enough to just toggle the extensions off. I needed a more foreceful way to stop myself mindlessly going to a counterproductive site. This app is made for people who are tempted easily like myself who spend a lot of time at their computers.
+
 ## ToDo
 - Add support for other browsers (Currently only made for chrome)
 
 #### Features
-- Settings 
-    - Lock toggle ability while timer is active
-    - Change colour format of ext (Light Mode, Dark Mode)
 - Tab for sites that should be blocked even if ext is off, these could be sites such as fast food or gambling sites.
 - Create a tab view for the sites lists, when off and on
 - Add tabs for perma blocked sites and toggle blocked sites
