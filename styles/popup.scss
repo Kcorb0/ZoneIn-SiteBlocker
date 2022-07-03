@@ -45,6 +45,7 @@ button {
     text-align: center;
     background-color: $cPink;
     color: $cWhite;
+    outline: none;
 }
 
 button:active {
@@ -120,7 +121,7 @@ button:hover {
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 3fr;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0px 5px 0px;
     height: 25px;
 }
 
@@ -129,24 +130,36 @@ button:hover {
     border: 2px solid $cPink;
     border-radius: 10px;
     box-sizing: border-box;
-    outline: none;
     padding-left: 5px;
     background-color: $cBlack;
     color: $cWhite;
+    outline: none;
 }
 
 .site-inp::placeholder {
     color: rgba(255, 255, 255, 0.452);
 }
 
+.sites-hint {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.slash-hint {
+    color: $cPink;
+    font-size: 12px;
+}
+
 .sites-header {
     text-align: center;
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .sites-cont {
-    height: 260px;
+    height: 250px;
 }
 
 .tabs {

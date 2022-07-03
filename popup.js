@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
     // Button actions
     document.getElementById('activate').addEventListener('click', () => {
         let active = true;
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             if (newSite.slice(0, 2) === "p/") {
-                alert("triggered");
                 document.getElementById('site-inp').value = "";
                 hardBlockedSites.push(newSite.slice(2).toLowerCase());
                 chrome.storage.local.set({ "hardBlockedSites": hardBlockedSites })
@@ -39,9 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('site-inp').value = "";
                 blockedSites.push(newSite.toLowerCase());
                 chrome.storage.local.set({ "blockedSites": blockedSites });
-            } 
+            }
             refreshSitesList();
             createSiteList();
+            hCreateSiteList();
         });
     });
 
@@ -61,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Donate Button, navigates to open collective
     document.getElementById('donate').addEventListener('click', () => {
-        directToSite('https://opencollective.com/');
+        directToSite('https://www.patreon.com/techmage?fan_landing=true');
     });
 
     // Suggestion Button, navigates to GitHub repo
@@ -183,5 +182,7 @@ function activeButtonState() {
 
 function refreshSitesList() {
     let sitesList = document.getElementById("site-items");
+    let sitesListPerm = document.getElementById("site-items-perm");
     sitesList.innerHTML = "";
+    sitesListPerm.innerHTML = "";
 }

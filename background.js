@@ -52,23 +52,23 @@ chrome.tabs.onUpdated.addListener(() => {
             });
         }
 
-    chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
-        let currentUrl = tabs[0].url;
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+            let currentUrl = tabs[0].url;
 
-        chrome.storage.local.get("hardBlockedSites", (sitesData) => {
+            chrome.storage.local.get("hardBlockedSites", (sitesData) => {
 
-            let sites = sitesData.hardBlockedSites;
+                let sites = sitesData.hardBlockedSites;
 
-            console.log(sites);
+                console.log(sites);
 
-            sites.forEach((site) => {
-                if (currentUrl.includes(site)) {
-                    console.log(site);
-                    chrome.tabs.update(undefined, { url: redirectUrl });
-                }
+                sites.forEach((site) => {
+                    if (currentUrl.includes(site)) {
+                        console.log(site);
+                        chrome.tabs.update(undefined, { url: redirectUrl });
+                    }
+                });
             });
         });
-    });
 
     });
 });
